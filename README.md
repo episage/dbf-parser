@@ -32,7 +32,7 @@ This class is the main interface for reading data from dBase files. It extends `
 
 ### new Parser(path, options)
 
-* path `String` The full path to the DBF file to parse
+* path `String` The full path to the DBF file to parse. Empty path will consume process.stdin.
 * options `Object` An object containing options for the parser.
 
 The support options are:

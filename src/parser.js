@@ -8,7 +8,7 @@ export default class Parser extends EventEmitter {
     constructor(filename, options) {
         super();
 
-        this.filename = filename;
+        this.filename = filename || process.stdin;
         this.options = options || {};
         this.encoding = this.options.encoding || 'utf-8';
     }
