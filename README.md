@@ -25,16 +25,16 @@ var DbfParser = require('@episage/dbf-parser');
 
 This is the main interface for reading data from dBase files.
 
-### new Parser(readableStream, encoding)
+### Parser(readableStream, encoding)
 
 * stream `readableStream` - stream from `process.stdin` or `fs.createReadStream` or other
 * string `encoding` - the character encoding to use (default = `utf-8`, uses `iconv-lite` under the hood)
 
-Creates a new Parser and attaches it to the specified filename.
+Creates a new parser and attaches it to the specified filename.
 
     var fs = require('fs');
     var DbfParser = require('@episage/dbf-parser');
-    var parser = new DbfParser(fs.createReadStream('/path/to/my/dbase/file.dbf'));
+    var parser = DbfParser(fs.createReadStream('/path/to/my/dbase/file.dbf'));
 
 ### parser.on(event, listener)
 
@@ -79,7 +79,7 @@ The following code example illustrates a very simple usage for this module:
 ```js
 var fs = require('fs');
 var DbfParser = require('@episage/dbf-parser');
-var parser = new DbfParser(fs.createReadStream('/path/to/my/dbase/file.dbf'));
+var parser = DbfParser(fs.createReadStream('/path/to/my/dbase/file.dbf'));
 
 parser.on('header', (h) => {
     console.log('dBase file header has been parsed');
