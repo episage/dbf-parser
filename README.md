@@ -107,6 +107,12 @@ For more help information on using the command line options, use the integrated 
 $ dbf-parser --help
 ```
 
+# Performance
+
+On MacBook Pro (Retina, 13-inch, Early 2015):
+ - `iconv-lite` - ~5MB/s - currently implemented version
+ - `Buffer.toString()` - ~10MB/s
+
 # Tests
 
 Tests are written in Mocha using Chai BDD for the expectations. Data on San Francisco zip codes was used as a reference test file - downloaded from [SF OpenData](https://data.sfgov.org/) and included in the `./test/fixtures/bayarea_zipcodes.dbf` file within the repository.
