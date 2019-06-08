@@ -3,14 +3,15 @@ DBF Parser
 
 This is an event-based dBase file parser for very efficiently reading data from `*.dbf` files.
 
-  [![NPM Downloads][downloads-image]][downloads-url]
-
-The codebase is written in ES5 JavaScript.
+ - ES5
+ - uses Node streams
+ - accepts `stdin`
+ - can be used as standalone app to convert `.dbf` to `.csv`
 
 To get started, simply install the module using npm:
 
 ```bash
-$ npm install dbf-parser
+$ npm install @episage/dbf-parser
 ```
 
 and then `require` it:
