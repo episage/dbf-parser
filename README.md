@@ -109,3 +109,6 @@ $ dbf-parser --help
 
 Tests are written in Mocha using Chai BDD for the expectations. Data on San Francisco zip codes was used as a reference test file - downloaded from [SF OpenData](https://data.sfgov.org/) and included in the `./test/fixtures/bayarea_zipcodes.dbf` file within the repository.
 
+# Credits
+
+Some of the texts and inspiration for the rewrite were taken from https://github.com/abstractvector/node-dbf
