@@ -4,6 +4,7 @@ DBF Parser
 This is an event-based dBase file parser for very efficiently reading data from `*.dbf` files.
 
  - ES5
+ - uses `iconv-lite` to support multiple encodings
  - uses Node streams
  - accepts `stdin`
  - can be used as standalone app to convert `.dbf` to `.csv`
