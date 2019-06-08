@@ -101,6 +101,7 @@ function Parser(readableStream, encoding = 'utf8') {
                     break;
             }
         } while (data);
+        ee.emit('end');
     });
 
     return {

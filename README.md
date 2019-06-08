@@ -68,6 +68,10 @@ This object may look like:
 }
 ```
 
+### Event: 'end'
+
+This event is emitted when the parser reached end of the stream or end of DBF database.
+
 ## Usage
 
 The following code example illustrates a very simple usage for this module:
