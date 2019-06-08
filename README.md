@@ -18,7 +18,7 @@ $ npm install @episage/dbf-parser
 and then `require` it:
 
 ```js
-var DbfParser = require('dbf-parser');
+var DbfParser = require('@episage/dbf-parser');
 ```
 
 ## Parser
@@ -33,7 +33,7 @@ This is the main interface for reading data from dBase files.
 Creates a new Parser and attaches it to the specified filename.
 
     var fs = require('fs');
-    var DbfParser = require('dbf-parser');
+    var DbfParser = require('@episage/dbf-parser');
     var parser = new DbfParser(fs.createReadStream('/path/to/my/dbase/file.dbf'));
 
 ### parser.on(event, listener)
@@ -74,7 +74,7 @@ The following code example illustrates a very simple usage for this module:
 
 ```js
 var fs = require('fs');
-var DbfParser = require('dbf-parser');
+var DbfParser = require('@episage/dbf-parser');
 var parser = new DbfParser(fs.createReadStream('/path/to/my/dbase/file.dbf'));
 
 parser.on('header', (h) => {
