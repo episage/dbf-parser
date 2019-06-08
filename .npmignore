@@ -1,8 +1,0 @@
-# folder containing the unbuilt source
-src/
-
-# folder containing downloaded statements
-data/
-
-# sandbox file for local testing
-test.js

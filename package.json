@@ -1,43 +1,31 @@
 {
-  "name": "node-dbf",
-  "version": "0.4.0",
+  "name": "dbf-parser",
+  "version": "1.0.0",
   "engines": {
     "node": ">=7"
   },
   "description": "An efficient dBase DBF file parser written in pure JavaScript",
-  "main": "./lib/parser.js",
-  "bin": "./bin/node-dbf.js",
+  "main": "./src/Parser.js",
+  "bin": "./bin/dbf-parser.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/abstractvector/node-dbf.git"
+    "url": "git://github.com/episage/dbf-parser.git"
   },
   "keywords": [
     "dBase",
     "dbf"
   ],
-  "author": "Matt Knight <abstractvector@users.noreply.github.com>",
+  "author": "Tomasz Ciborski <ciborski.com>",
   "license": "MIT",
-  "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
-    "babel-preset-es2015": "^6.24.1",
-    "chai": "^4.1.2",
-    "mocha": "^4.1.0",
-    "rimraf": "^2.6.2"
-  },
   "dependencies": {
-    "commander": "^2.9.0"
+    "commander": "^2.20.0",
+    "iconv-lite": "^0.4.24"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4"
   },
   "scripts": {
-    "clean": "rimraf lib && mkdir lib",
-    "build-server": "babel -d ./lib ./src",
-    "build": "npm run clean && npm run build-server",
-    "prepare": "npm run build && npm test",
-    "test": "mocha --require babel-core/register --recursive"
-  },
-  "babel": {
-    "presets": [
-      "es2015"
-    ]
+    "test": "mocha --recursive ./src/**/*.spec.js"
   }
 }

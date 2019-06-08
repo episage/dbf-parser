@@ -43,3 +43,5 @@ test.js
 
 # folder for storing statements
 data
+
+/.vscode
