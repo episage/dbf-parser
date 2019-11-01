@@ -107,6 +107,10 @@ function Parser(readableStream, encoding = 'utf8') {
         ee.emit('end');
     })
 
+    readableStream.on('error', function () {
+        ee.emit('error');
+    })
+
     return {
         state,
         header,
