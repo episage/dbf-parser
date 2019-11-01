@@ -101,8 +101,11 @@ function Parser(readableStream, encoding = 'utf8') {
                     break;
             }
         } while (data);
-        ee.emit('end');
     });
+
+    readableStream.on('end', function () {
+        ee.emit('end');
+    })
 
     return {
         state,
