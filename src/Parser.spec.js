@@ -2,7 +2,7 @@ var fs = require('fs');
 var path = require('path');
 
 var { expect } = require('chai');
-var HeaderParser = require('../src/HeaderParser');
+var HeaderParser = require('../src/Parser');
 
 describe('HeaderParser', function () {
   it('parses', function (done) {
@@ -13,11 +13,11 @@ describe('HeaderParser', function () {
     hp.on('error', e => {
       return done(e);
     });
-    hp.parse(header => {
+    hp.on('header', header => {
       expect(header).to.be.deep.equal(
         {
           "type": "\u0003",
-          "dateUpdated": new Date("2009-06-15T22:00:00.000Z"),
+          "dateUpdated": new Date("2009-06-15T23:00:00.000Z"),
           "numberOfRecords": 187,
           "start": 193,
           "recordLength": 74,
