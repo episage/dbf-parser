@@ -2,14 +2,14 @@ var fs = require('fs');
 var path = require('path');
 
 var { expect } = require('chai');
-var HeaderParser = require('../src/Parser');
+var Parser = require('../src/Parser');
 
-describe('HeaderParser', function () {
-  it('parses', function (done) {
+describe('Parser', function () {
+  it('can parse header', function (done) {
     var filePath = path.resolve('test', 'fixtures', 'bayarea_zipcodes.dbf');
     var stream = fs.createReadStream(filePath);
 
-    var hp = HeaderParser(stream);
+    var hp = Parser(stream);
     hp.on('error', e => {
       return done(e);
     });
@@ -17,7 +17,7 @@ describe('HeaderParser', function () {
       expect(header).to.be.deep.equal(
         {
           "type": "\u0003",
-          "dateUpdated": new Date("2009-06-15T23:00:00.000Z"),
+          "dateUpdated": "2009-06-16",
           "numberOfRecords": 187,
           "start": 193,
           "recordLength": 74,

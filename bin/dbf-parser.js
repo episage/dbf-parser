@@ -3,7 +3,7 @@ var os = require('os');
 
 var program = require('commander');
 var pkg = require('../package.json');
-var Parser = require('../src/parser');
+var Parser = require('../src/Parser');
 
 program
   .version(pkg.version)
