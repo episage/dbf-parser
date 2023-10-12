@@ -1,6 +1,6 @@
 {
   "name": "@episage/dbf-parser",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "engines": {
     "node": ">=7"
   },
@@ -22,7 +22,7 @@
     "iconv-lite": "^0.6.3"
   },
   "devDependencies": {
-    "chai": "^4.3.7",
+    "chai": "^4.3.10",
     "mocha": "^10.2.0"
   },
   "scripts": {
