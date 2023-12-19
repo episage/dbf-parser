@@ -31,24 +31,29 @@ function readField(field, buffer, encoding) {
   let value = (iconv.decode(buffer, encoding)).trim();
 
   if (field.type === 'C') { // Character
-    value = value;
+    return value;
   } else if (field.type === 'F') { // Floating Point
-    value = (value === +value) && (value === (value | 0)) ? parseInt(value, 10) : parseFloat(value, 10);
+    return (value === +value) && (value === (value | 0)) ? parseInt(value, 10) : parseFloat(value, 10);
   } else if (field.type == 'L') { // Logical
     if (['Y', 'y', 'T', 't'].includes(value)) {
-      value = true;
+      return true;
     } else if (['N', 'n', 'F', 'f'].includes(value)) {
-      value = false;
+      return false;
     } else {
-      value = null;
+      return null;
     }
   } else if (field.type === 'M') { // Memo
-    value = value;
+    return value;
   } else if (field.type === 'N') { // Numeric
-    value = value === +value && value === (value | 0) ? parseInt(value) : parseFloat(value, 10);
+    return value === +value && value === (value | 0) ? parseInt(value) : parseFloat(value, 10);
   }
 
-  return value;
+  return {
+    field,
+    buffer,
+    encoding,
+    stringValue: value,
+  };
 }
 
 module.exports = {
