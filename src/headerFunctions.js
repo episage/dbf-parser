@@ -53,7 +53,7 @@ function parseFieldSubRecord(buffer, encoding) {
 }
 
 function convertBinaryToInteger(buffer) {
-  return buffer.readIntLE(0, buffer.length);
+  return buffer.readUIntLE(0, buffer.length);
 }
 
 function decodeType(byte) {
